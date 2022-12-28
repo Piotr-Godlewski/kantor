@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kantor wymiany walut</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+        integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/container.css" rel="stylesheet">
+    <link href="css/form.css" rel="stylesheet">
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form class="form js-form">
+            <fieldset class="form__fieldset">
+                <legend class="form__legend">Kantor wymiany walut</legend>
+                <p>
+                    <label>
+                        <span class="form__labelText">
+                            Podaj kwotę w zł:
+                        </span>
+                        <input class="form__field js-zloty" type="number" step="0.01" name="kwota_zl" placeholder="0.00"
+                            autofocus required min="0.01">
+                    </label>
+                </p>
+                <p>Wybierz walutę (kurs z dn. 20.12.2022):</p>
+                <ul class="form__labelList">
+                    <li>
+                        <label>
+                            <input class="js-pound" type="radio" name="currency" value="5.35"> £ funt
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input class="js-dolar" type="radio" name="currency" value="4.40"> $ dolar
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input class="js-euro" type="radio" name="currency" value="4.67"> € euro
+                        </label>
+                    </li>
+                </ul>
+                <p>
+                    <label>
+                        Po wymianie otrzymasz: <span class="form__labelResult js-result">0.00</span>
+                    </label>
+                </p>
+                <p>
+                    <button class="form__button">
+                        Przelicz
+                    </button>
+                </p>
+            </fieldset>
+
+        </form>
+    </div>
+</body>
+
+</html>
