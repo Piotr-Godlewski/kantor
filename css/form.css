@@ -3,6 +3,7 @@
     max-width: 200px;
     display: inline-block;
     margin-right: 10px;
+    font-weight: bold;
 }
 
 .form__field {
@@ -19,7 +20,7 @@
 }
 
 .form__labelList {
-    list-style: none;
+    list-style: none;   
 }
 
 .form__button {

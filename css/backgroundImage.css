@@ -1,0 +1,5 @@
+.backgroundImage {
+    background-image: url("../images/changedMoney.jpg");
+    background-position: center;
+    background-size: cover;
+}
