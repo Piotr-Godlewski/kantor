@@ -1,6 +1,12 @@
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    margin: 20px;
     padding: 10px;
     text-align: center;
+    flex-basis: 600px;
 }
