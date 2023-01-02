@@ -1,35 +1,46 @@
 {
-
     const euroValue = document.querySelector(".js-euro");
     const poundValue = document.querySelector(".js-pound");
     const dolarValue = document.querySelector(".js-dolar");
-    const zlotyValue = document.querySelector(".js-zloty");
-    const changeResult = document.querySelector(".js-result");
-    const formElement = document.querySelector(".js-form");
 
-    formElement.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        let rate;
-        let currencySymbol;
-
+    const selectCurrencySymbol = () => {
         switch (true) {
             case poundValue.checked:
-                rate = poundValue.value;
-                currencySymbol = " $";
-                break;
+                return " £";
             case dolarValue.checked:
-                rate = dolarValue.value;
-                currencySymbol = " $";
-                break;
+                return " $";
             case euroValue.checked:
-                rate = euroValue.value;
-                currencySymbol = " €";
-                break;
+                return " €";
         }
+    }
 
-        const result = zlotyValue.value / rate;
-        changeResult.innerText = ` ${result.toFixed(2)} ${currencySymbol}`;
+    const selectCurrency = () => {
+        switch (true) {
+            case poundValue.checked:
+                return poundValue.value;
+            case dolarValue.checked:
+                return dolarValue.value;
+            case euroValue.checked:
+                return euroValue.value;
+        }
+    };
 
-    });
+    const calculateExchange = () => {
+        const zlotyValue = document.querySelector(".js-zloty");
+        return zlotyValue.value / selectCurrency();
+    };
+
+    const resultExchange = (event) => {
+        event.preventDefault();
+        const changeResult = document.querySelector(".js-result");
+        changeResult.innerText = ` ${calculateExchange().toFixed(2)} ${selectCurrencySymbol()}`;
+    };
+
+    const init = () => {
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", resultExchange);
+    };
+
+    init();
 }
