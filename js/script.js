@@ -1,25 +1,35 @@
-let euroValue = document.querySelector(".js-euro");
-let poundValue = document.querySelector(".js-pound");
-let dolarValue = document.querySelector(".js-dolar");
-let zlotyValue = document.querySelector(".js-zloty");
-let changeResult = document.querySelector(".js-result");
-let formElement = document.querySelector(".js-form");
+{
 
-formElement.addEventListener("submit", (event) => {
-    event.preventDefault();
-    switch (true) {
-        case poundValue.checked:
-            let changePound = zlotyValue.value / poundValue.value;
-            changeResult.innerText = changePound.toFixed(2) + " £";
-            break;
-        case dolarValue.checked:
-            let changeDolar = zlotyValue.value / dolarValue.value;
-            changeResult.innerText = changeDolar.toFixed(2) + " $";
-            break;
-        case euroValue.checked:
-            let changeEuro = zlotyValue.value / euroValue.value;
-            changeResult.innerText = changeEuro.toFixed(2) + " €";
-            break;
-    }
+    const euroValue = document.querySelector(".js-euro");
+    const poundValue = document.querySelector(".js-pound");
+    const dolarValue = document.querySelector(".js-dolar");
+    const zlotyValue = document.querySelector(".js-zloty");
+    const changeResult = document.querySelector(".js-result");
+    const formElement = document.querySelector(".js-form");
 
-});
+    formElement.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        let rate;
+        let currencySymbol;
+
+        switch (true) {
+            case poundValue.checked:
+                rate = poundValue.value;
+                currencySymbol = " $";
+                break;
+            case dolarValue.checked:
+                rate = dolarValue.value;
+                currencySymbol = " $";
+                break;
+            case euroValue.checked:
+                rate = euroValue.value;
+                currencySymbol = " €";
+                break;
+        }
+
+        const result = zlotyValue.value / rate;
+        changeResult.innerText = ` ${result.toFixed(2)} ${currencySymbol}`;
+
+    });
+}
