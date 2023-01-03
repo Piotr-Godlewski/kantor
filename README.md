@@ -15,3 +15,4 @@ https://piotr-godlewski.github.io/kantor/
 - CSS
 - JS
 - BEM
+- FLEXBOX

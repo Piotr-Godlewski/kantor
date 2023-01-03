@@ -3,7 +3,7 @@
     const poundValue = document.querySelector(".js-pound");
     const dolarValue = document.querySelector(".js-dolar");
 
-    const selectCurrencySymbol = () => {
+    const getCurrencySymbol = () => {
         switch (true) {
             case poundValue.checked:
                 return " £";
@@ -14,7 +14,7 @@
         }
     }
 
-    const selectCurrency = () => {
+    const getCurrencyValue = () => {
         switch (true) {
             case poundValue.checked:
                 return poundValue.value;
@@ -27,13 +27,13 @@
 
     const calculateExchange = () => {
         const zlotyValue = document.querySelector(".js-zloty");
-        return zlotyValue.value / selectCurrency();
+        return zlotyValue.value / getCurrencyValue();
     };
 
     const resultExchange = (event) => {
         event.preventDefault();
         const changeResult = document.querySelector(".js-result");
-        changeResult.innerText = ` ${calculateExchange().toFixed(2)} ${selectCurrencySymbol()}`;
+        changeResult.innerText = ` ${calculateExchange().toFixed(2)} ${getCurrencySymbol()}`;
     };
 
     const init = () => {
